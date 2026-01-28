@@ -7,8 +7,8 @@ cursor = conn.cursor()
 query = """
     SELECT PlayerID, YearID, TeamID, HR
     FROM batting
-    WHERE YearID = 1976 and teamID LIKE 'P%'
-    order by HR DESC
+    WHERE YearID = 1976 and TeamID = 'PHI' and HR != 0
+    ORDER BY HR DESC
 """
 
 cursor.execute(query)
