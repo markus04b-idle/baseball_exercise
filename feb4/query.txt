@@ -1,0 +1,17 @@
+#group by player id, hr and career id top 10 players in dataframe
+query = """ 
+    SELECT playerID,sum(HR) as careerHR
+    FROM batting
+    GROUP By playerID
+    Order By careerHR DESC
+    limit 10
+"""
+
+#query that has most hr by year on PHI in dataframe
+query = """ 
+    SELECT yearID,sum(HR) as totalHR
+    from Batting
+    where teamID = 'PHI'
+    Group by yearID 
+    order by yearID desc
+"""
