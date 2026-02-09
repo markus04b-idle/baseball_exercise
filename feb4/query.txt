@@ -15,3 +15,16 @@ query = """
     Group by yearID 
     order by yearID desc
 """
+
+#top 10 years in hr's
+Select yearID, sum(HR)
+    from Batting
+    where teamID = 'PHI'
+    Group by yearID
+    Order by sum(HR) desc limit 10
+
+#find team name that has ch in it
+ select playerid
+    from batting
+    where playerid like '%ch%'
+    group by playerid
